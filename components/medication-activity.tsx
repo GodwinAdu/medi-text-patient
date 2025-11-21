@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Clock, CheckCircle2, XCircle, AlertTriangle, RefreshCw } from "lucide-react"
-import { apiService } from "@/lib/api"
+
 
 interface ActivityItem {
   id: string
@@ -29,10 +29,7 @@ export default function MedicationActivity({ userId }: MedicationActivityProps) 
   const loadActivity = async () => {
     setIsLoading(true)
     try {
-      const result = await apiService.getPatientActivity()
-      if (result.success) {
-        setActivity(result.activity || [])
-      }
+     
     } catch (error) {
       console.error('Failed to load activity:', error)
     }
