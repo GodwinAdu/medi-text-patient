@@ -1,9 +1,10 @@
 "use server"
 
-import { connectToDB } from "../mongoose"
+
 import Medication from "../models/medication.models"
 import { Patient } from "../models/patient.models"
 import { getCurrentUser } from "../auth"
+import { connectToDB } from "../mongoose"
 
 export async function getMedications() {
   try {
