@@ -23,7 +23,7 @@ export async function getSMSHistory() {
     return {
       success: true,
       messages: smsHistory.map(msg => ({
-        id: msg._id.toString(),
+        id: (msg._id as any).toString(),
         medicationName: msg.medicationName,
         dosage: msg.dosage,
         scheduledTime: msg.scheduledTime,
@@ -55,7 +55,7 @@ export async function getMedicationHistory() {
     return {
       success: true,
       history: history.map(record => ({
-        id: record._id.toString(),
+        id: (record._id as any).toString(),
         medicationName: record.medicationName,
         dosage: record.dosage,
         scheduledTime: record.scheduledTime,
