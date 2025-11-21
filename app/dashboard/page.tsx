@@ -1079,8 +1079,10 @@ export default function Dashboard() {
                         </Button>
                         <Button onClick={async (e) => {
                           e.preventDefault()
-                          const form = e.target.closest('.space-y-6')
-                          const inputs = form.querySelectorAll('input')
+                          const form = (e.target as HTMLElement).closest('.space-y-6')
+                          const inputs = form?.querySelectorAll('input')
+                          if (!inputs) return
+                          
                           const vitalData: any = {}
                           
                           const systolic = inputs[0]?.value
